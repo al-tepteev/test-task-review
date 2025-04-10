@@ -13,10 +13,8 @@ import { useInput } from "./composables/useInput"
 import { useInputClasses } from "./composables/useInputClasses";
 import { inputProps } from "./shared/props"
 
-const props = defineProps<typeof inputProps>(inputProps);
-const emit = defineEmits<{
-  (e: "update:modelValue", value: string): void;
-}>();
+const props = defineProps(inputProps);
+const emit = defineEmits(["update:modelValue"]);
 
 const inputClasses = useInputClasses(props)
 const { model } = useInput(props, emit);
