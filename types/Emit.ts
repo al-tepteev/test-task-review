@@ -1,0 +1,1 @@
+export type Emit = (event: any, value?: string) => void;

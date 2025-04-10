@@ -1,6 +1,6 @@
-export function useButton() {
-  const emit = defineEmits(["onClick"]);
+import type { Emit } from "~/types/Emit";
 
+export function useButton(emit: Emit ) {
   const onClick = () => emit("onClick");
 
   return {
