@@ -1,0 +1,1 @@
+export type EmitFn = (event: 'update:modelValue', value: string) => void;
