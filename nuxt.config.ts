@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   experimental: {
     defaults: {
       nuxtLink: {
-        trailingSlash: "append", // can be 'append' or 'remove'
+        trailingSlash: "append",
       },
     },
   },
@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 
   modules: ['@pinia/nuxt'],
   
+    css: ['~/assets/style/tailwind.css'],
 
   vite: {
     plugins: [
