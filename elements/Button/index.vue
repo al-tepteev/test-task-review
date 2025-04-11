@@ -18,6 +18,7 @@ import { useButton } from "./composables/useButton";
 const emit = defineEmits(["onClick"]);
 const { theme } = defineProps(buttonProps);
 
-const buttonClasses = useButtonClasses(theme)
+const { buttonClasses } = useButtonClasses(theme)
+
 const { onClick } = useButton(emit);
 </script>
