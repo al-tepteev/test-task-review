@@ -16,6 +16,6 @@ import { inputProps } from "./shared/props"
 const props = defineProps(inputProps);
 const emit = defineEmits(["update:modelValue"]);
 
-const inputClasses = useInputClasses(props)
+const { inputClasses } = useInputClasses(props)
 const { model } = useInput(props, emit);
 </script>
