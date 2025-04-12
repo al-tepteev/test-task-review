@@ -4,7 +4,7 @@ type ValidatorFn = (value: any) => string | null
 
 interface FieldConfig {
   value: any
-  validators: ValidatorFn[]
+  validators?: ValidatorFn[] // Сделали validators опциональным
 }
 
 export function useValidation(fieldsConfig: Record<string, FieldConfig>) {
@@ -20,13 +20,13 @@ export function useValidation(fieldsConfig: Record<string, FieldConfig>) {
   // Функция валидации всех полей
   function validate(): boolean {
     let isValid = true
+    
     for (const key in fieldsConfig) {
       const value = fields[key]
-      const validators = fieldsConfig[key].validators
-
+      const validators = fieldsConfig[key].validators || [] // Используем пустой массив, если validators не определен
+      
       for (const validator of validators) {
         const error = validator(value)
-        
         if (error) {
           errors[key] = error
           isValid = false
@@ -36,12 +36,13 @@ export function useValidation(fieldsConfig: Record<string, FieldConfig>) {
         }
       }
     }
+    
     return isValid
   }
 
-  return {
-    fields,
-    errors,
-    validate
+  return { 
+    fields, 
+    errors, 
+    validate 
   }
 }

@@ -1,6 +1,19 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  typescript: {
+    shim: false
+  },
+  imports: {
+    dirs: [
+      // стандартные
+      'composables',
+      'utils',
+      // фичи: сканируем вложенные composables и utils внутри каждой фичи
+      'features/*/composables',
+      'features/*/utils'
+    ]
+  },
   experimental: {
     defaults: {
       nuxtLink: {
