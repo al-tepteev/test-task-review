@@ -1,11 +1,11 @@
 <template>
-	<form @submit.prevent="handleSubmit" class="space-y-6">
-		<div class="space-y-4">
-			<slot :fields="fields" :errors="errors" />
-		</div>
-
-		<Button type="submit" :value="submitLabel" />
-	</form>
+  <form @submit.prevent="handleSubmit" class="space-y-6">
+    <div class="space-y-4">
+      <slot :fields="fields" :errors="errors" />
+    </div>
+    
+    <Button type="submit" :value="submitLabel" />
+  </form>
 </template>
 
 <script setup lang="ts">
@@ -23,13 +23,13 @@ const props = defineProps({
   },
   submitLabel: {
     type: String,
-    default: 'submit'
+    required: true
   }
 })
 
 const emit = defineEmits(['submit'])
 
-const { fields, errors, validate } = useValidation(props.validationSchema)
+const { fields, errors, validate } = useValidation(props.initialValues, props.validationSchema)
 
 function handleSubmit() {
   if (validate()) {
