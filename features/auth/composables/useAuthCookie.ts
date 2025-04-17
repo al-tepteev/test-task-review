@@ -1,6 +1,6 @@
 // composables/useAuthCookie.ts
 import { useCookie } from '#app'
-import type { UserOrNull } from '../types/UserOrNull'
+import type { UserOrNull } from '../types/index'
 
 const COOKIE_NAME = 'auth'
 const COOKIE_OPTIONS = {

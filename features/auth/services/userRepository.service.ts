@@ -1,6 +1,5 @@
 // ./auth/services/userRepository.ts
-import type { IUserRepository } from '../types/IUserRepository';
-import type { User } from '../types/User';
+import type { IUserRepository, User } from '../types/index';
 
 export class UserRepository implements IUserRepository {
   constructor(private endpoint: string = '/data/users.json') {}

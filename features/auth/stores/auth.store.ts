@@ -1,8 +1,7 @@
 // ./features/auth/stores/auth.store.ts
 import { defineStore } from 'pinia'
 import { useAuthCookie } from '../composables/useAuthCookie'
-import type { UserOrNull } from '../types/UserOrNull'
-import type { IAuthService } from '../types/IAuthService'
+import type { UserOrNull, IAuthService } from '../types/index'
 
 
 export const useAuthStore = defineStore('auth', {

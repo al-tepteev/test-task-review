@@ -1,7 +1,5 @@
 // ./auth/services/AuthService.ts
-import type { IUserRepository } from '../types/IUserRepository';
-import type { IAuthService } from '../types/IAuthService';
-import type { UserOrNull } from '../types/UserOrNull';
+import type { IUserRepository, IAuthService, UserOrNull } from '../types/index';
 
 export class AuthService implements IAuthService {
   constructor(private userRepo: IUserRepository) {}
