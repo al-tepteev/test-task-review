@@ -1,4 +1,4 @@
-// ./features/auth/stores/auth.store.ts
+// features/auth/stores/auth.store.ts
 import { defineStore } from 'pinia'
 import { useAuthCookie } from '../composables/useAuthCookie'
 import type { UserOrNull, IAuthService } from '../types/index'

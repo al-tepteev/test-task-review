@@ -1,4 +1,4 @@
-// composables/useAuthCookie.ts
+// features/auth/composables/useAuthCookie.ts
 import { useCookie } from '#app'
 import type { UserOrNull } from '../types/index'
 

@@ -1,4 +1,4 @@
-// ./auth/services/AuthService.ts
+// features/auth/services/authService.service.ts
 import type { IUserRepository, IAuthService, UserOrNull } from '../types/index';
 
 export class AuthService implements IAuthService {

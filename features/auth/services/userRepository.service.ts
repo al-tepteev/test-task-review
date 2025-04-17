@@ -1,4 +1,4 @@
-// ./auth/services/userRepository.ts
+// features/auth/services/userRepository.service.ts
 import type { IUserRepository, User } from '../types/index';
 
 export class UserRepository implements IUserRepository {
