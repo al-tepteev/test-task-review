@@ -1,3 +1,4 @@
+// features/auth/types/IAuthService.ts
 import type { UserOrNull } from "./UserOrNull";
 
 export interface IAuthService {

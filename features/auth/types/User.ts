@@ -1,3 +1,4 @@
+// features/auth/types/User.ts
 export type User = {
   name: string;
   surname: string;
