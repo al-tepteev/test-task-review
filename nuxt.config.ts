@@ -1,6 +1,9 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  compatibilityDate: '2025-03-24',
+  devtools: { enabled: true },
+
   typescript: {
     shim: false
   },
@@ -11,7 +14,8 @@ export default defineNuxtConfig({
       'utils',
       // фичи: сканируем вложенные composables и utils внутри каждой фичи
       'features/*/composables',
-      'features/*/utils'
+      'features/*/utils',
+      'features/*/plugins'
     ]
   },
   experimental: {
@@ -21,13 +25,9 @@ export default defineNuxtConfig({
       },
     },
   },
-  
-  compatibilityDate: '2025-03-24',
-  devtools: { enabled: true },
 
   modules: ['@pinia/nuxt'],
-  
-    css: ['~/assets/style/tailwind.css'],
+  css: ['~/assets/style/tailwind.css'],
 
   vite: {
     plugins: [
