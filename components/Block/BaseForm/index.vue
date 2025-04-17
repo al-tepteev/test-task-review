@@ -26,9 +26,7 @@ const props = defineProps({
     required: true
   }
 })
-
 const emit = defineEmits(['submit'])
-
 const { fields, errors, validate } = useValidation(props.initialValues, props.validationSchema)
 
 function handleSubmit() {
