@@ -16,20 +16,17 @@ export const useAuthStore = defineStore('auth', {
   },
 
   actions: {
+    setUser(user: UserOrNull) {
+      this.user = user
+      useAuthCookie().setUserToCookie(user)
+    },
+
     initService(service: IAuthService) {
       this.authService = service
     },
 
     initialize() {
       this.user = useAuthCookie().getUserFromCookie()
-    },
-
-    async login(credentials: { username: string; password: string }) {
-      if (!this.authService) throw new Error('AuthService not initialized')
-      const userData = await this.authService.login(credentials)
-      
-      useAuthCookie().setUserToCookie(userData)
-      this.user = userData
     },
   },
 })
